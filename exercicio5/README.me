@@ -1,1 +1,17 @@
 
+Esse comando gera um certificado X.509 (aluno.crt) a partir do seu CSR (aluno.csr).
+Como usamos -signkey aluno.key, o certificado é autoassinado (self-signed): a mesma chave privada do “dono” do certificado 
+também atua como “autoridade” que assina.
+Explicação de cada parâmetro:
+openssl x509: ferramenta para ler/criar/manipular certificados X.509.
+-req: diz que a entrada (-in) é um CSR (Certificate Signing Request), não um certificado pronto.
+-days 365: validade do certificado: 365 dias a partir da data de emissão.
+-in aluno.csr: CSR que contém Subject (DN) e chave pública.
+-signkey aluno.key: usa a chave privada para assinar o certificado gerado.
+-out aluno.crt: arquivo de saída do certificado.
+Qual a saída:
+aluno.crt: certificado com:
+dados (Subject)
+chave pública
+período de validade
+assinatura (feita com aluno.key)
