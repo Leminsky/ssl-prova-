@@ -1,1 +1,13 @@
 
+openssl req: trabalha com requisições de certificado (CSR) no padrão X.509.
+-new: cria uma nova requisição.
+-key aluno.key: usa a chave privada já existente para:
+assinar o CSR (prova que você possui a chave privada)
+vincular o CSR à chave que depois será usada no certificado
+-out aluno.csr: salva a requisição no arquivo aluno.csr.
+O que é um CSR ?
+Um CSR é um “pedido de certificado” que contém:
+seus dados de identidade (DN / subject), como C (país), ST (estado), L (cidade), O (organização) e principalmente o CN (Common Name);
+sua chave pública (derivada da aluno.key);
+uma assinatura feita com a chave privada (para garantir integridade e posse da chave).
+Ele não contém a chave privada. A aluno.key fica com você; o CSR é o que você envia para uma CA (Autoridade Certificadora) ou para um servidor interno que vai assinar e gerar o certificado (.crt/.pem
