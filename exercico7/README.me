@@ -1,5 +1,0 @@
-O comando `python3 -m http.server 8443 --bind 0.0.0.0` inicia um servidor HTTP simples, sem suporte a TLS/SSL. 
-Ao acessar `https://localhost:8443`, o navegador tenta estabelecer uma conexão HTTPS (handshake TLS), mas o serviço na porta 8443 responde como HTTP. 
-Como os protocolos não batem (HTTPS -> servidor HTTP), o navegador retorna erro de protocolo SSL (ex.: ERR_SSL_PROTOCOL_ERROR / SSL_ERROR_RX_RECORD_TOO_LONG). 
-A correção seria acessar via `http://localhost:8443` ou então configurar um servidor HTTPS real com certificado e chave.
-
