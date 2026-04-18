@@ -1,1 +1,13 @@
+Este exercício consiste em transferir um arquivo de certificado (.crt) da máquina Linux (VM) para a máquina Windows pela rede local usando SCP, que utiliza SSH para realizar a cópia de forma criptografada e autenticada.
+
+No comando:
+scp aluno.crt leme@192.168.0.90:/Users/leme/Documents/
+
+- aluno.crt é o arquivo local que será enviado.
+- leme é o usuário da sessão no Windows.
+- 192.168.0.90 é o endereço IP do Windows (destino).
+- a conexão ocorre pela porta padrão do SSH (porta 22).
+- /Users/leme/Documents/ é o diretório de destino no Windows.
+
+Objetivo: colocar o certificado no Windows para uso posterior (por exemplo, importação no repositório de certificados ou configuração de algum serviço que exija o .crt).
 
